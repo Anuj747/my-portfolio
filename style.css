@@ -1,0 +1,603 @@
+/* style.css - Final Version */
+
+:root {
+    --bg-body: #050505;
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+    --accent: #3b82f6; /* Blue */
+    --accent-glow: rgba(59, 130, 246, 0.5);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    
+    /* THE PLAYFUL BACKGROUND ANIMATION */
+    background-color: #050505;
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+        radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+        radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+    background-size: 200% 200%;
+    animation: gradient-move 15s ease infinite;
+}
+
+@keyframes gradient-move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- NAVIGATION --- */
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover { color: white; }
+
+/* --- LAYOUT & SECTIONS --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 0;
+}
+
+/* --- HERO SECTION --- */
+.hero-name {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 3rem; }
+    .hero-name { font-size: 1.5rem; }
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+/* --- TOOLKIT BAR --- */
+.toolkit-bar {
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 30px 0;
+    margin-bottom: 60px;
+}
+
+.toolkit-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.skill-item { text-align: center; }
+
+.skill-title {
+    display: block;
+    font-weight: 800;
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.skill-desc {
+    color: #666;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.divider {
+    width: 1px;
+    height: 30px;
+    background: #333;
+}
+
+@media (max-width: 600px) {
+    .divider { display: none; }
+    .toolkit-grid { gap: 20px; }
+}
+
+/* --- CERTIFICATIONS SECTION --- */
+.cert-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cert-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease, background 0.3s;
+    width: 100%;
+    max-width: 280px;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cert-icon {
+    font-size: 1.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.cert-info h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: white;
+}
+
+.cert-info p {
+    margin: 3px 0 0 0;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 14px 28px;
+    background: white;
+    color: black;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* --- PROJECT GRID --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.showcase-card {
+    background: #111;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.showcase-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.card-image-container {
+    width: 100%;
+    height: 220px;
+    background-color: #222;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.showcase-card:hover .card-image-container img { transform: scale(1.05); }
+
+.card-details { padding: 25px; }
+
+.tech-stack-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.tech-badge {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* --- WRITER MODE --- */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.writer-mode {
+    background: linear-gradient(145deg, rgba(255,255,255,0.03), transparent);
+    border-left: 4px solid var(--accent);
+}
+
+.writer-mode h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.content-snippet {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: #a1a1aa;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    background: rgba(255,255,255,0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-right: 8px;
+    color: white;
+}
+
+/* --- SOCIAL PROFILE --- */
+.social-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(145deg, #111, #0a0a0a);
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icon {
+    background: rgba(255,255,255,0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.arrow-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.social-profile:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(225, 48, 108, 0.15); 
+}
+
+.social-profile:hover .social-icon {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-profile:hover .arrow-icon {
+    transform: translateX(5px);
+}
+
+/* --- MODAL --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 80vh;
+    padding: 40px;
+    position: relative;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px; right: 25px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+.close-btn:hover { color: white; }
+
+.story-text p {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d4d4d8;
+    margin-bottom: 20px;
+}
+
+/* --- CONNECT SECTION --- */
+#connect {
+    min-height: auto !important;
+    padding: 60px 20px 80px 20px;
+}
+
+.email-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.social-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.social-icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    padding: 15px;
+    border-radius: 15px;
+    width: 90px;
+}
+
+.social-icon-box span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.social-icon-box svg {
+    width: 35px;
+    height: 35px;
+    fill: currentColor;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-icon-box.instagram svg {
+    fill: none !important; 
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.social-icon-box:hover {
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-5px);
+}
+.social-icon-box:hover span { opacity: 1; }
+
+.social-icon-box.linkedin:hover { color: #0077b5; }
+.social-icon-box.linkedin:hover svg { transform: scale(1.2); }
+
+.social-icon-box.github:hover { color: #d8b4fe; }
+.social-icon-box.github:hover svg { transform: scale(1.2); }
+
+.social-icon-box.instagram:hover { color: #e1306c; }
+.social-icon-box.instagram:hover svg { 
+    transform: scale(1.2) rotate(5deg); 
+}
+
+/* --- SCROLL REVEAL ANIMATION --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- MOBILE LAYOUT FIXES (The "App Dock" Look) --- */
+@media (max-width: 600px) {
+    
+    /* 1. Transform Nav into a Bottom Dock */
+    nav {
+        top: auto;          /* Remove from top */
+        bottom: 20px;       /* Stick to bottom */
+        width: 85%;         /* Not full width */
+        padding: 15px 20px; /* Comfortable touch size */
+        
+        display: flex;
+        justify-content: space-between; /* Spread icons/text evenly */
+        align-items: center;
+        
+        background: rgba(15, 15, 15, 0.95); /* Darker background so you can read */
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Nice shadow lift */
+    }
+
+    nav a {
+        margin: 0;           /* Remove side margins */
+        font-size: 0.85rem;  /* readable text size */
+        font-weight: 600;
+        opacity: 0.7;
+    }
+
+    nav a:hover, nav a:active {
+        opacity: 1;
+        color: var(--accent);
+    }
+
+    /* 2. Fix the Hero Text Sizing */
+    .hero h1 {
+        font-size: 2.5rem; /* Prevent it from being huge */
+    }
+
+    .hero-name {
+        font-size: 1.2rem;
+        margin-top: 60px; /* Add space so it doesn't hit the top of screen */
+    }
+
+    /* 3. Make Project Cards Full Width */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 4. Fix Connect Icons Spacing */
+    .social-grid {
+        gap: 15px;
+    }
+    
+    /* 5. Ensure bottom padding so content isn't hidden behind the new nav */
+    body {
+        padding-bottom: 100px; 
+    }
+}
+/* --- HIGH LEVEL ANIMATIONS --- */
+
+/* 1. Typewriter Cursor */
+.typewriter {
+    border-right: 2px solid var(--accent);
+    padding-right: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { border-color: var(--accent); }
+    50% { border-color: transparent; }
+    100% { border-color: var(--accent); }
+}
+
+/* 2. Spotlight Effect on Cards */
+.showcase-card, .cert-card, .card {
+    position: relative;
+    /* We will set these variables using JS */
+    --mouse-x: 0px; 
+    --mouse-y: 0px;
+}
+
+/* This 'before' element is the flashlight */
+.showcase-card::before, .cert-card::before, .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index: 2;
+    
+    /* The Glow Gradient */
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(255, 255, 255, 0.1), 
+        transparent 40%
+    );
+}
+
+/* Show the light when hovering */
+.showcase-card:hover::before, 
+.cert-card:hover::before, 
+.card:hover::before {
+    opacity: 1;
+}

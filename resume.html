@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Anuj Arke</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Georgia:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #050505;
+            --text-main: #e4e4e7;
+            --text-muted: #a1a1aa;
+            --accent: #3b82f6;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #111;
+            padding: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        /* HEADER */
+        .header {
+            border-bottom: 2px solid #222;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-role {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover { color: var(--accent); }
+
+        /* SECTIONS */
+        h2 {
+            font-size: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .section-content {
+            margin-left: 0;
+        }
+
+        /* PROJECT / JOB ITEMS */
+        .item {
+            margin-bottom: 25px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            color: #666;
+            background: #1a1a1a;
+            padding: 2px 8px;
+            border-radius: 4px;
+            height: fit-content;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        li { margin-bottom: 5px; }
+
+        /* SKILLS GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category strong {
+            display: block;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        /* PRINT STYLES (So it looks good if they print it) */
+        @media print {
+            body { background: white; color: black; }
+            .resume-container { box-shadow: none; border: none; width: 100%; padding: 0; }
+            .header h1 { color: black; }
+            .header-role, h2 { color: #000; border-bottom: 2px solid #000; }
+            .contact-info a { color: black; }
+            .item-date { border: 1px solid #ccc; background: none; }
+            .btn-back { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .header { flex-direction: column; text-align: left; }
+            .contact-info { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-back" style="position: fixed; top: 20px; left: 20px; text-decoration: none; color: #666; font-weight: bold; background: #111; padding: 10px 20px; border-radius: 30px; border: 1px solid #333;">&larr; Back to Portfolio</a>
+
+    <div class="resume-container">
+        
+        <header class="header">
+            <div>
+                <h1>Anuj R. Arke</h1>
+                <div class="header-role">Full-Stack Developer & Content Writer</div>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:anujarke1010@gmail.com">anujarke1010@gmail.com</a>
+                <a href="tel:+918767366735">+91 8767366735</a>
+                <a href="https://linkedin.com/in/anujarke" target="_blank">linkedin.com/in/anujarke</a>
+                <a href="https://github.com/Anuj747" target="_blank">github.com/Anuj747</a>
+                <span>Chh. Sambhaji Nagar, India</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <div class="section-content">
+                <p>
+                    Motivated B.Sc IT undergraduate (CGPA 7.43) with a strong foundation in full-stack development and database management. 
+                    Skilled in bridging the gap between complex code and clear communication through technical writing. 
+                    Passionate about AI/ML integration and building user-centric web applications. 
+                    Currently seeking internships and freelance opportunities to apply skills in PHP, Python, and React.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="section-content skills-grid">
+                <div class="skill-category">
+                    <strong>Languages</strong>
+                    <span style="color: #aaa;">Python, PHP, JavaScript, SQL, C++, HTML5, CSS3</span>
+                </div>
+                <div class="skill-category">
+                    <strong>Frameworks & Tools</strong>
+                    <span style="color: #aaa;">React.js, Bootstrap, Git/GitHub, VS Code, XAMPP</span>
+                </div>
+                <div class="skill-category">
+                    <strong>Creative</strong>
+                    <span style="color: #aaa;">Technical Writing, Video Editing (Premiere Pro), Storytelling</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Featured Projects</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Health AI (Diagnostic Tool)</div>
+                        <div class="item-subtitle">Python, React, Machine Learning</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Developed an intelligent health diagnostic web application that predicts potential conditions based on user symptoms.</li>
+                    <li>Integrated a Python-based Machine Learning model (Scikit-learn) with a responsive React frontend.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Urban Scholar (NGO Platform)</div>
+                        <div class="item-subtitle">PHP, MySQL, HTML/CSS</div>
+                    </div>
+                    <div class="item-date">In Development</div>
+                </div>
+                <ul>
+                    <li>Architected a comprehensive volunteer management system to connect educators with underprivileged students.</li>
+                    <li>Features include a secure volunteer registration portal, event scheduling system, and an admin dashboard for data management.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">No One's Judging</div>
+                        <div class="item-subtitle">HTML, CSS, GitHub Pages</div>
+                    </div>
+                    <div class="item-date">Live</div>
+                </div>
+                <ul>
+                    <li>Designed and deployed a distraction-free creative writing platform for authors to express ideas anonymously.</li>
+                    <li>Focused on minimalist UI/UX principles to enhance reading retention and user engagement.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Bachelor of Science in Information Technology (B.Sc IT)</div>
+                        <div class="item-subtitle">Deogiri College (Dr. Babasaheb Ambedkar Marathwada University)</div>
+                    </div>
+                    <div class="item-date">2023 – 2026</div>
+                </div>
+                <ul>
+                    <li><strong>CGPA:</strong> 7.59</li>
+                    <li>Relevant Coursework: Database Management Systems, Web Programming, OOP.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Higher Secondary Certificate (HSC) - Science</div>
+                        <div class="item-subtitle">Deogiri Jr. College</div>
+                    </div>
+                    <div class="item-date">2021 – 2023</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 8px;">• <strong>AI Engineer Explorer</strong> – Udemy (School of AI)</li>
+                <li style="margin-bottom: 8px;">• <strong>JavaScript, PHP, & Python Complete Course</strong> – Udemy</li>
+                <li style="margin-bottom: 8px;">• <strong>Java and C++ Beginners</strong> – Udemy</li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+</html>
