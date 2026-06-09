@@ -5,241 +5,540 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anuj Arke | Portfolio</title>
     
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Portfolio of Anuj Arke - Full-Stack Developer, Technical Writer, and Content Strategist.">
+    <meta property="og:title" content="Anuj Arke | Developer & Writer">
+    <meta property="og:description" content="Bridging the gap between software development and clear communication.">
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    
+    <!-- Custom Style and Script -->
     <link rel="stylesheet" href="style.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Georgia:ital@0;1&display=swap" rel="stylesheet">
-    
-    <meta name="description" content="Portfolio of Anuj Arke - Full Stack Developer, Content Writer, and Visual Storyteller.">
-    <meta property="og:title" content="Anuj Arke | Developer & Writer">
-    <meta property="og:description" content="Bridging the gap between complex code and clear communication.">
-    <meta property="og:image" content="assets/project-1.png">
+    <script src="script.js" defer></script>
 </head>
-<body>
+<body class="loading">
 
+    <!-- RETRO TERMINAL BOOT PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-header">
+                <span>SYSTEM BOOT CONSOLE // WOOF_v4.0</span>
+                <div class="preloader-dots">
+                    <span class="dot active"></span>
+                    <span class="dot active"></span>
+                    <span class="dot active"></span>
+                </div>
+            </div>
+            
+            <!-- Fun Hacker Dog Mascot -->
+            <div class="preloader-mascot">
+                <div class="hacker-dog">
+                    <div class="dog-ear left"></div>
+                    <div class="dog-ear right"></div>
+                    <div class="dog-face">
+                        <div class="dog-eyes">
+                            <div class="dog-eye left"></div>
+                            <div class="dog-eye right"></div>
+                        </div>
+                        <div class="dog-glasses">
+                            <div class="glass-lens left"></div>
+                            <div class="glass-bridge"></div>
+                            <div class="glass-lens right"></div>
+                        </div>
+                        <div class="dog-nose"></div>
+                        <div class="dog-mouth">
+                            <div class="dog-tongue"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mascot-activity" id="mascot-status">SNIFFING DATABASES...</div>
+            </div>
+
+            <div id="boot-console"></div>
+            <div class="loader-track">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Glowing Background Aurora Orbs & Particles -->
+    <div id="canvas-container" title="Interactive particle nebula"></div>
+    <div class="space-bg"></div>
+    <div class="aurora-1"></div>
+    <div class="aurora-2"></div>
+    <div class="aurora-3"></div>
+
+    <!-- TECHNICAL TOP NAVBAR -->
     <nav>
-        <a href="#home">Home</a>
-        <a href="#projects">Work</a>
-        <a href="#content">Content</a>
-        <a href="#videos">Edits</a>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>ANUJ_ARKE //</span>
+                <div class="status-badge">
+                    <span class="pulse-dot"></span>
+                    <span>SYS_ONLINE</span>
+                </div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Work</a>
+                <a href="#terminal">Terminal</a>
+                <a href="#connect">Connect</a>
+                <a href="resume.html">Resume</a>
+            </div>
+            
+            <div class="nav-clock" id="live-clock">--:--:--</div>
+        </div>
     </nav>
 
     <div class="container">
 
-        <section id="home" class="hero">
-            <div class="hero-name">
-                Anuj Arke
+        <!-- HERO LANDING SECTION -->
+        <section id="home" class="hero landing-section">
+            <!-- Full-Width Interactive Variable Font Banner -->
+            <div class="hero-pressure-wrapper">
+                <div class="text-pressure-component" 
+                     data-text="ANUJ ARKE" 
+                     data-font-family="Compressa VF" 
+                     data-font-url="https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2"
+                     data-flex="true" 
+                     data-scale="true" 
+                     data-width="true" 
+                     data-weight="true" 
+                     data-italic="true" 
+                     data-alpha="false" 
+                     data-stroke="false" 
+                     data-text-color="#00ff9d" 
+                     data-min-font-size="48">
+                </div>
             </div>
-            <h1>
-    <span class="typewriter" data-text="Developer."></span><br>
-    <span class="typewriter" data-text="Content Writer." style="color: #6366f1;"></span><br>
-    <span class="typewriter" data-text="Visual Storyteller."></span>
-</h1>
-            <p style="max-width: 650px; line-height: 1.8;">
-                I am an <strong>Information Technology graduate</strong>, currently freelancing and working part-time at <strong>Coldrts Studio</strong>. 
-                I bridge the gap between complex code and clear communication—building robust backend logic, sleek UIs, and engaging technical stories. 
-                I am actively seeking internships, full-time roles, and freelance opportunities!
-            </p>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <span>SCROLL TO INITIALIZE</span>
+                <span class="scroll-arrow">&darr;</span>
+            </div>
+        </section>
+
+        <!-- BIO SECTION -->
+        <section id="bio" class="bio-section reveal">
+            <div class="bio-content-centered">
+                <div class="hero-name">Full-Stack Engineer & Writer</div>
+                <h1>Revolving Code.<br><span class="gradient-text">Structured Copy.</span></h1>
+                
+                <div class="scroll-reveal" 
+                     data-base-opacity="0" 
+                     data-enable-blur="true" 
+                     data-base-rotation="3" 
+                     data-blur-strength="6"
+                     data-rotation-end="bottom 75%"
+                     data-word-animation-end="bottom 65%">
+                    <p class="scroll-reveal-text">
+                        I am an <strong class="highlight-white">Information Technology graduate</strong>, currently <span class="highlight-accent">freelancing</span>, accepting <span class="highlight-accent">internships</span>, and open for <span class="highlight-accent">job opportunities</span>. I bridge the gap between <strong class="highlight-white">complex engineering</strong> and <strong class="highlight-white">clear communication</strong>—<span class="highlight-blue">architecting versatile full-stack systems</span>, <span class="highlight-purple">crafting high-performance interfaces</span>, and <span class="highlight-cyan">adapting to any stack to solve complex end-to-end challenges</span>.
+                    </p>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#connect" class="btn btn-primary">Ping Connection</a>
+                    <a href="resume.html" class="btn btn-secondary">View ATS Resume &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOLKIT SECTION -->
+        <section id="toolkit" class="reveal">
+            <h2>Technical Toolkit</h2>
+            <p class="section-desc">Practical languages, developer frameworks, and specialized core logic.</p>
             
-            <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="#connect" class="btn">Let's Work Together</a>
-                
-                <a href="resume.html" class="btn" style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: white;">
-                    View Resume &rarr;
-                </a>
+            <div class="skills-wrapper">
+                <div class="skills-category-group">
+                    <h3>Languages</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">SQL (MySQL / SQLite)</span>
+                        <span class="skill-tag">HTML5 / CSS3</span>
+                        <span class="skill-tag">C++</span>
+                    </div>
+                </div>
+
+                <div class="skills-category-group">
+                    <h3>Frameworks & Developer Tools</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">Vite</span>
+                        <span class="skill-tag">Three.js</span>
+                        <span class="skill-tag">Git / GitHub</span>
+                    </div>
+                </div>
+
+                <div class="skills-category-group">
+                    <h3>Specialized & Creative</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Technical Writing</span>
+                        <span class="skill-tag">Social Media Management</span>
+                        <span class="skill-tag">Content Strategy</span>
+                        <span class="skill-tag">Copywriting</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Marquee (LogoLoop) -->
+            <div class="tech-marquee-container">
+                <span class="tech-marquee-label">// CORE_STACK_FLOW //</span>
+                <div class="logoloop logoloop--horizontal logoloop--fade logoloop--scale-hover" 
+                     data-speed="50" 
+                     data-direction="left" 
+                     data-gap="40" 
+                     data-logo-height="32" 
+                     data-pause-on-hover="true"
+                     data-fade-out="true"
+                     data-fade-out-color="#0a0a0c"
+                     data-scale-on-hover="true">
+                     <div class="logoloop__track">
+                         <ul class="logoloop__list" role="list">
+                             <li class="logoloop__item" role="listitem">
+                                 <a class="logoloop__link" href="https://www.typescriptlang.org" target="_blank" rel="noreferrer noopener" aria-label="TypeScript">
+                                     <span class="logoloop__node">
+                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M0 0H24V24H0V0Z" fill="#3178C6"/>
+                                             <path d="M22.5 19H18.9V22H18V19H14.4V18.1H18V9.5H18.9V18.1H22.5V19Z" fill="white"/>
+                                             <path d="M12.98 22C11.83 22 10.97 21.49 10.45 20.48L11.53 19.82C11.87 20.5 12.38 20.89 13 20.89C13.67 20.89 14.15 20.53 14.15 19.82C14.15 19.14 13.68 18.8 12.63 18.34C11.45 17.82 10.37 17.14 10.37 15.63C10.37 14.28 11.44 13.25 12.91 13.25C14.18 13.25 15.06 13.88 15.48 14.9L14.39 15.54C14.13 14.94 13.63 14.54 12.94 14.54C12.31 14.54 11.9 14.89 11.9 15.51C11.9 16.09 12.28 16.37 13.24 16.79C14.53 17.34 15.68 17.97 15.68 19.57C15.68 21.05 14.54 22 12.98 22Z" fill="white"/>
+                                         </svg>
+                                         <span class="tech-tag-text">TypeScript</span>
+                                     </span>
+                                 </a>
+                             </li>
+                             <li class="logoloop__item" role="listitem">
+                                 <a class="logoloop__link" href="https://react.dev" target="_blank" rel="noreferrer noopener" aria-label="React">
+                                     <span class="logoloop__node">
+                                         <svg width="24" height="24" viewBox="-11.5 -10.23174 23 20.46348" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="0" cy="0" r="2.05" fill="#61DAFB"/>
+                                             <g stroke="#61DAFB" stroke-width="1" fill="none">
+                                                 <ellipse rx="11" ry="4.2"/>
+                                                 <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+                                                 <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+                                             </g>
+                                         </svg>
+                                         <span class="tech-tag-text">React.js</span>
+                                     </span>
+                                 </a>
+                             </li>
+                             <li class="logoloop__item" role="listitem">
+                                 <a class="logoloop__link" href="https://python.org" target="_blank" rel="noreferrer noopener" aria-label="Python">
+                                     <span class="logoloop__node">
+                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M11.897 2C6.91 2 7.07 4.14 7.07 4.14V6.26H12.015V6.99H5.068C5.068 6.99 2 7.34 2 12.11C2 16.88 4.676 16.64 4.676 16.64H6.2V14.47C6.2 11.23 8.868 11.02 8.868 11.02H13.882C13.882 11.02 16.897 10.74 16.897 6.2C16.897 1.66 11.897 2 11.897 2ZM9.49 3.52C10.027 3.52 10.462 3.96 10.462 4.49C10.462 5.02 10.027 5.46 9.49 5.46C8.953 5.46 8.518 5.02 8.518 4.49C8.518 3.96 8.953 3.52 9.49 3.52Z" fill="#3776AB"/>
+                                             <path d="M12.103 22C17.09 22 16.93 19.86 16.93 19.86V17.74H11.985V17.01H18.932C18.932 17.01 22 16.66 22 11.89C22 7.12 19.324 7.36 19.324 7.36H17.8V9.53C17.8 12.77 15.132 12.98 15.132 12.98H10.118C10.118 12.98 7.103 13.26 7.103 17.8C7.103 22.34 12.103 22 12.103 22ZM14.51 20.48C13.973 20.48 13.538 20.04 13.538 19.51C13.538 18.98 13.973 18.54 14.51 18.54C15.047 18.54 15.482 18.98 15.482 19.51C15.482 20.04 15.047 20.48 14.51 20.48Z" fill="#FFE873"/>
+                                         </svg>
+                                         <span class="tech-tag-text">Python</span>
+                                     </span>
+                                 </a>
+                             </li>
+                             <li class="logoloop__item" role="listitem">
+                                 <a class="logoloop__link" href="https://supabase.com" target="_blank" rel="noreferrer noopener" aria-label="Supabase">
+                                     <span class="logoloop__node">
+                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M12.44 2.1a1 1 0 00-1.28.67l-3.32 10.3H4a1 1 0 00-.77 1.64l8.33 9.19a1 1 0 001.55-.26l3.32-10.3H20a1 1 0 00.77-1.64L12.44 2.1z" fill="#3ECF8E"/>
+                                         </svg>
+                                         <span class="tech-tag-text">Supabase</span>
+                                     </span>
+                                 </a>
+                             </li>
+                             <li class="logoloop__item" role="listitem">
+                                 <a class="logoloop__link" href="https://threejs.org" target="_blank" rel="noreferrer noopener" aria-label="ThreeJS">
+                                     <span class="logoloop__node">
+                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M12 2L2 22h20L12 2zm0 4.5L18.5 19h-13L12 6.5z" fill="#FFFFFF"/>
+                                         </svg>
+                                         <span class="tech-tag-text">Three.js</span>
+                                     </span>
+                                 </a>
+                             </li>
+                             <li class="logoloop__item" role="listitem">
+                                 <a class="logoloop__link" href="https://tailwindcss.com" target="_blank" rel="noreferrer noopener" aria-label="Tailwind CSS">
+                                     <span class="logoloop__node">
+                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.567.89 2.29 1.628C13.676 10.63 15.02 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.567-.89-2.29-1.628C16.326 6.17 14.981 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.567.89 2.29 1.628C7.676 17.83 9.02 19 12.001 19c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.567-.89-2.29-1.628C9.326 13.37 7.981 12 5.001 12z" fill="#38BDF8"/>
+                                         </svg>
+                                         <span class="tech-tag-text">Tailwind CSS</span>
+                                     </span>
+                                 </a>
+                             </li>
+                             <li class="logoloop__item" role="listitem">
+                                 <a class="logoloop__link" href="https://git-scm.com" target="_blank" rel="noreferrer noopener" aria-label="Git">
+                                     <span class="logoloop__node">
+                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M23.384 11.233L12.767.616a1.085 1.085 0 00-1.536 0L9.467 2.38l3.35 3.35a2.203 2.203 0 011.666 1.658c.84.225 1.513.882 1.764 1.734a2.215 2.215 0 011.666 2.11 2.22 2.22 0 01-2.214 2.214 2.21 2.21 0 01-1.658-1.666c-.05-.017-.1-.025-.15-.025h-.025a2.186 2.186 0 01-1.683-1.658L9.052 7.02l-1.675 1.675 3.35 3.35a2.203 2.203 0 011.666 1.658c.84.225 1.513.882 1.764 1.734a2.215 2.215 0 011.666 2.11 2.22 2.22 0 01-2.214 2.214 2.21 2.21 0 01-1.658-1.666 2.176 2.176 0 01-1.764-1.742l-3.35-3.35a2.21 2.21 0 01-1.658-1.666 2.22 2.22 0 010-3.324L.616 12.767a1.085 1.085 0 000 1.536l10.617 10.617a1.085 1.085 0 001.536 0l10.615-10.617a1.082 1.082 0 000-1.536v-.038z" fill="#F05032"/>
+                                         </svg>
+                                         <span class="tech-tag-text">Git</span>
+                                     </span>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
+                </div>
             </div>
         </section>
 
-        <div class="toolkit-bar">
-            <div class="container toolkit-grid">
-                
-                <div class="skill-item">
-                    <span class="skill-title">React & TS</span>
-                    <span class="skill-desc">Frontend</span>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="skill-item">
-                    <span class="skill-title">Supabase</span>
-                    <span class="skill-desc">Backend & Auth</span>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="skill-item">
-                    <span class="skill-title">Groq AI</span>
-                    <span class="skill-desc">AI Integration</span>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="skill-item">
-                    <span class="skill-title">Python & PHP</span>
-                    <span class="skill-desc">Core Logic</span>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="skill-item">
-                    <span class="skill-title">Premiere Pro</span>
-                    <span class="skill-desc">Visuals</span>
-                </div>
-
-            </div>
-        </div>
-
-        <section id="certs" style="min-height: auto; padding: 40px 0;">
-            <div class="container">
-                <h3 style="text-align: center; color: #888; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px;">
-                    Certified Expertise
-                </h3>
-                
-                <div class="cert-grid">
-                    
-                    <div class="cert-card">
-                        <div class="cert-icon">🎓</div>
-                        <div class="cert-info">
-                            <h4>AI Engineer Explorer</h4>
-                            <p>School of AI</p>
-                        </div>
-                    </div>
-
-                    <div class="cert-card">
-                        <div class="cert-icon">💻</div>
-                        <div class="cert-info">
-                            <h4>Full Stack Masterclass</h4>
-                            <p>JS, PHP, & Python</p>
-                        </div>
-                    </div>
-
-                    <div class="cert-card">
-                        <div class="cert-icon">⚡</div>
-                        <div class="cert-info">
-                            <h4>C++ & Java Core</h4>
-                            <p>Crunch Coding Inst.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
+        <!-- FEATURED PROJECTS SECTION -->
+        <section id="projects" class="reveal">
             <h2>Featured Work</h2>
-            <p style="margin-bottom: 40px; color: #888;">
-                Live deployments, AI integrations, and ongoing development.
-            </p>
+            <p class="section-desc">Live deployments, AI integrations, and ongoing development.</p>
             
             <div class="project-grid">
                 
-                <div class="showcase-card">
-                    <div class="card-image-container">
-                        <img src="assets/tuduyu.png" onerror="this.src='https://via.placeholder.com/600x400/8b5cf6/FFFFFF?text=tuduyu'" alt="tuduyu AI Productivity App">
+                <!-- Project 1: tuduyu -->
+                <div class="project-card electric-border" data-color="#00ff9d" data-speed="1.2" data-chaos="0.12" data-border-radius="12">
+                    <div class="eb-canvas-container">
+                        <canvas class="eb-canvas"></canvas>
                     </div>
-                    
-                    <div class="card-details">
-                        <div class="tech-stack-row">
-                            <span class="tech-badge">React/TS</span>
-                            <span class="tech-badge">Supabase</span>
-                            <span class="tech-badge">Groq AI</span>
-                        </div>
-                        
-                        <h3>tuduyu</h3>
-                        <p style="color: #aaa; font-size: 0.95rem; margin-top: 10px; line-height: 1.6;">
-                            A full-stack, AI-powered productivity app. Features a real-time Kanban board, secure authentication, and a conversational AI assistant that organizes your day.
-                        </p>
-
-                        <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
-                            <a href="https://tuduyu-nu.vercel.app/" target="_blank" class="btn" style="padding: 10px 15px; font-size: 0.8rem;">
-                                View Live App &rarr;
-                            </a>
-                            <a href="https://github.com/Anuj747/tuduyu" target="_blank" class="btn" style="padding: 10px 15px; font-size: 0.8rem; background: transparent; border: 1px solid white; color: white;">
-                                GitHub &rarr;
-                            </a>
-                        </div>
+                    <div class="eb-layers">
+                        <div class="eb-glow-1"></div>
+                        <div class="eb-glow-2"></div>
+                        <div class="eb-background-glow"></div>
                     </div>
-                </div>
-
-                <div class="showcase-card">
-                    <div class="card-image-container">
-                        <img src="assets/project-1.png" onerror="this.src='https://via.placeholder.com/600x400/3b82f6/FFFFFF?text=No+One\'s+Judging'" alt="No One's Judging">
-                    </div>
-                    
-                    <div class="card-details">
-                        <div class="tech-stack-row">
-                            <span class="tech-badge">HTML/CSS</span>
-                            <span class="tech-badge">GitHub Pages</span>
+                    <div class="eb-content">
+                        <div class="project-top">
+                            <div class="project-header">
+                                <span class="project-folder-icon">📂</span>
+                                <div class="project-badges">
+                                    <span class="project-badge">React/TS</span>
+                                    <span class="project-badge">Supabase</span>
+                                    <span class="project-badge">Groq AI</span>
+                                </div>
+                            </div>
+                            <h3>tuduyu</h3>
+                            <p class="project-desc">
+                                A full-stack, AI-powered productivity app. Features a real-time Kanban board, secure authentication, and a conversational AI assistant that organizes your day.
+                            </p>
                         </div>
-                        
-                        <h3>No One's Judging</h3>
-                        <p style="color: #aaa; font-size: 0.95rem; margin-top: 10px; line-height: 1.6;">
-                            A live web platform focused on creative expression and user interaction. 
-                            Fully deployed and responsive.
-                        </p>
-
-                        <div style="margin-top: 20px;">
-                            <a href="https://anuj747.github.io/NoOnesJudging/" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.85rem;">
-                                View Live Site &rarr;
-                            </a>
+                        <div>
+                            <div class="project-role-box">
+                                <span class="project-role-label">My Role</span>
+                                <span class="project-role-text">Core Backend Developer</span>
+                            </div>
+                            <div class="project-bottom">
+                                <span class="project-tech-list">React, TS, Supabase, Groq AI</span>
+                                <div class="project-links-row">
+                                    <a href="https://github.com/Anuj747/tuduyu" target="_blank" class="project-link">GitHub</a>
+                                    <a href="https://tuduyu-nu.vercel.app/" target="_blank" class="project-link">View Live App &rarr;</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="showcase-card">
-                    <div class="card-image-container">
-                        <img src="assets/project-2.png" onerror="this.src='https://via.placeholder.com/600x400/10b981/FFFFFF?text=Health+AI'" alt="Health AI">
+                <!-- Project 2: Coldrts Animation Studio -->
+                <div class="project-card electric-border" data-color="#00ff9d" data-speed="1.2" data-chaos="0.12" data-border-radius="12">
+                    <div class="eb-canvas-container">
+                        <canvas class="eb-canvas"></canvas>
                     </div>
-                    
-                    <div class="card-details">
-                        <div class="tech-stack-row">
-                            <span class="tech-badge">AI/ML</span>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">React/JS</span>
+                    <div class="eb-layers">
+                        <div class="eb-glow-1"></div>
+                        <div class="eb-glow-2"></div>
+                        <div class="eb-background-glow"></div>
+                    </div>
+                    <div class="eb-content">
+                        <div class="project-top">
+                            <div class="project-header">
+                                <span class="project-folder-icon">📂</span>
+                                <div class="project-badges">
+                                    <span class="project-badge">Next.js</span>
+                                    <span class="project-badge">Tailwind</span>
+                                </div>
+                            </div>
+                            <h3>Coldrts Animation Studio</h3>
+                            <p class="project-desc">
+                                Official production and services portal designed for Coldrts Studio, highlighting 3D rendering pipelines, client galleries, motion reels, and inquiry routing hooks.
+                            </p>
                         </div>
-                        
-                        <h3>Health AI</h3>
-                        <p style="color: #aaa; font-size: 0.95rem; margin-top: 10px; line-height: 1.6;">
-                            An intelligent health diagnostic tool. 
-                            <br><em style="color: #fbbf24; font-size: 0.85rem;">*Live link displays frontend interface only.*</em>
-                        </p>
-
-                        <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
-                            <a href="https://spectacular-florentine-aff895.netlify.app/" target="_blank" class="btn" style="padding: 10px 15px; font-size: 0.8rem; background: transparent; border: 1px solid white; color: white;">
-                                View UI
-                            </a>
-                            <a href="https://youtu.be/wvxSDQk0k3Y?feature=shared" target="_blank" class="btn" style="padding: 10px 15px; font-size: 0.8rem;">
-                                Watch Full Demo &rarr;
-                            </a>
+                        <div>
+                            <div class="project-role-box">
+                                <span class="project-role-label">My Role</span>
+                                <span class="project-role-text">Full-Stack Developer (Full Site Creator)</span>
+                            </div>
+                            <div class="project-bottom">
+                                <span class="project-tech-list">Next.js, React, Tailwind, Framer Motion</span>
+                                <div class="project-links-row">
+                                    <a href="https://coldrts.vercel.app/" target="_blank" class="project-link">View Live Site &rarr;</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="showcase-card" style="opacity: 0.8;">
-                    <div class="card-image-container">
-                        <img src="assets/project-3.png" onerror="this.src='https://via.placeholder.com/600x400/6366f1/FFFFFF?text=Urban+Scholar+(WIP)'" alt="Urban Scholar">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #ef4444; color: white; padding: 5px 10px; font-size: 0.7rem; font-weight: bold; border-radius: 4px;">
-                            IN DEVELOPMENT
+                <!-- Project 3: Health Mate AI -->
+                <div class="project-card electric-border" data-color="#00ff9d" data-speed="1.2" data-chaos="0.12" data-border-radius="12">
+                    <div class="eb-canvas-container">
+                        <canvas class="eb-canvas"></canvas>
+                    </div>
+                    <div class="eb-layers">
+                        <div class="eb-glow-1"></div>
+                        <div class="eb-glow-2"></div>
+                        <div class="eb-background-glow"></div>
+                    </div>
+                    <div class="eb-content">
+                        <div class="project-top">
+                            <div class="project-header">
+                                <span class="project-folder-icon">📂</span>
+                                <div class="project-badges">
+                                    <span class="project-badge">AI/ML</span>
+                                    <span class="project-badge">Python</span>
+                                    <span class="project-badge">React/JS</span>
+                                </div>
+                            </div>
+                            <h3>Health Mate AI</h3>
+                            <p class="project-desc">
+                                An intelligent health diagnostic platform powered by symptom-indexing classifier models, created entirely by me.
+                                <br><em style="color: #fbbf24; font-size: 0.85rem; font-family: 'Fira Code', monospace; display: block; margin-top: 6px;">*Live link displays frontend interface only.*</em>
+                            </p>
+                        </div>
+                        <div>
+                            <div class="project-role-box">
+                                <span class="project-role-label">My Role</span>
+                                <span class="project-role-text">Creator & Lead Engineer (Solo Creator)</span>
+                            </div>
+                            <div class="project-bottom">
+                                <span class="project-tech-list">Python, Scikit-learn, React</span>
+                                <div class="project-links-row">
+                                    <a href="https://spectacular-florentine-aff895.netlify.app/" target="_blank" class="project-link">View UI</a>
+                                    <a href="https://youtu.be/wvxSDQk0k3Y?feature=shared" target="_blank" class="project-link">Watch Full Demo &rarr;</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="card-details">
-                        <div class="tech-stack-row">
-                            <span class="tech-badge">PHP</span>
-                            <span class="tech-badge">SQL</span>
-                            <span class="tech-badge">Full Stack</span>
-                        </div>
-                        
-                        <h3>Urban Scholar</h3>
-                        <p style="color: #aaa; font-size: 0.95rem; margin-top: 10px; line-height: 1.6;">
-                            An upcoming volunteer management platform for connecting educators with underprivileged students.
-                        </p>
+                </div>
 
-                        <div style="margin-top: 20px;">
-                            <span style="color: #666; font-size: 0.85rem; border: 1px dashed #444; padding: 8px 12px; border-radius: 4px;">
-                                Coming Soon
-                            </span>
+                <!-- Project 4: Urban Scholar -->
+                <div class="project-card electric-border" data-color="#00ff9d" data-speed="1.2" data-chaos="0.12" data-border-radius="12">
+                    <div class="eb-canvas-container">
+                        <canvas class="eb-canvas"></canvas>
+                    </div>
+                    <div class="eb-layers">
+                        <div class="eb-glow-1"></div>
+                        <div class="eb-glow-2"></div>
+                        <div class="eb-background-glow"></div>
+                    </div>
+                    <div class="eb-content">
+                        <div class="project-top">
+                            <div class="project-header">
+                                <span class="project-folder-icon">📂</span>
+                                <div class="project-badges">
+                                    <span class="project-badge">LIVE</span>
+                                    <span class="project-badge">PHP</span>
+                                    <span class="project-badge">SQL</span>
+                                </div>
+                            </div>
+                            <h3>Urban Scholar</h3>
+                            <p class="project-desc">
+                                A database-driven volunteer management platform connecting educators with underprivileged students.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="project-role-box">
+                                <span class="project-role-label">My Role</span>
+                                <span class="project-role-text">Core Full-Stack Developer & Database Architect</span>
+                            </div>
+                            <div class="project-bottom">
+                                <span class="project-tech-list">PHP, MySQL, CSS Grid</span>
+                                <div class="project-links-row">
+                                    <a href="https://urbanscholar.site.je/" target="_blank" class="project-link">View Live Site &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: No One's Judging -->
+                <div class="project-card electric-border" data-color="#00ff9d" data-speed="1.2" data-chaos="0.12" data-border-radius="12">
+                    <div class="eb-canvas-container">
+                        <canvas class="eb-canvas"></canvas>
+                    </div>
+                    <div class="eb-layers">
+                        <div class="eb-glow-1"></div>
+                        <div class="eb-glow-2"></div>
+                        <div class="eb-background-glow"></div>
+                    </div>
+                    <div class="eb-content">
+                        <div class="project-top">
+                            <div class="project-header">
+                                <span class="project-folder-icon">📂</span>
+                                <div class="project-badges">
+                                    <span class="project-badge">HTML/CSS</span>
+                                    <span class="project-badge">GH Pages</span>
+                                </div>
+                            </div>
+                            <h3>No One's Judging</h3>
+                            <p class="project-desc">
+                                A live writing portal focused on creative expression and anonymous user interaction, built entirely by me.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="project-role-box">
+                                <span class="project-role-label">My Role</span>
+                                <span class="project-role-text">Creator & Lead Developer (Solo Creator)</span>
+                            </div>
+                            <div class="project-bottom">
+                                <span class="project-tech-list">HTML5, CSS Grid, GH Pages</span>
+                                <div class="project-links-row">
+                                    <a href="https://anuj747.github.io/NoOnesJudging/" target="_blank" class="project-link">View Live Site &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: CIE Portal -->
+                <div class="project-card electric-border" data-color="#00ff9d" data-speed="1.2" data-chaos="0.12" data-border-radius="12">
+                    <div class="eb-canvas-container">
+                        <canvas class="eb-canvas"></canvas>
+                    </div>
+                    <div class="eb-layers">
+                        <div class="eb-glow-1"></div>
+                        <div class="eb-glow-2"></div>
+                        <div class="eb-background-glow"></div>
+                    </div>
+                    <div class="eb-content">
+                        <div class="project-top">
+                            <div class="project-header">
+                                <span class="project-folder-icon">📂</span>
+                                <div class="project-badges">
+                                    <span class="project-badge wip">IN DEVELOPMENT</span>
+                                    <span class="project-badge">PHP</span>
+                                    <span class="project-badge">SQL</span>
+                                </div>
+                            </div>
+                            <h3>CIE Portal</h3>
+                            <p class="project-desc">
+                                Official Continuous Internal Evaluation platform designed for Deogiri College to manage and track academic records across the IT, CS, and Animation departments.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="project-role-box">
+                                <span class="project-role-label">My Role</span>
+                                <span class="project-role-text">Full-Stack Developer (Team Project)</span>
+                            </div>
+                            <div class="project-bottom">
+                                <span class="project-tech-list">PHP, MySQL, CSS Grid, JavaScript</span>
+                                <div class="project-links-row">
+                                    <span style="color: var(--accent); font-size: 0.78rem; border: 1px dashed var(--accent); padding: 5px 10px; border-radius: 4px; font-family: 'Fira Code', monospace; box-shadow: 0 0 5px rgba(0, 255, 157, 0.15);">Official College Integration</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -247,264 +546,166 @@
             </div>
         </section>
 
-        <section id="content">
-            <h2>Writing & Stories</h2>
-            <p style="color: #888; margin-bottom: 30px;">
-                Original narrative series and technical analysis.
-            </p>
+        <!-- RETRO INTERACTIVE TERMINAL SECTION -->
+        <section id="terminal" class="terminal-section reveal">
+            <h2>Interactive Command Line</h2>
+            <p class="section-desc">Type queries directly into the core terminal to check logs or trigger sub-routines.</p>
             
-            <div class="project-grid">
-                
-                <div class="card writer-mode">
-                    <div style="margin-bottom: 10px;">
-                        <span class="tag">Original Series</span>
-                        <span class="tag">Romance</span>
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <div class="control-dot"></div>
+                        <div class="control-dot"></div>
+                        <div class="control-dot"></div>
                     </div>
-                    
-                    <h3>The Space Between Us</h3>
-                    
-                    <p class="content-snippet">
-                        "His name was José. Just a quiet guy in a loud world, the kind who noticed things most people overlooked. 
-                        He talked to her sometimes—her name was Maria..."
-                    </p>
-                    
-                    <button onclick="openModal('modal-story')" style="background: none; border: none; padding: 0; margin-top: 15px; color: var(--accent); cursor: pointer; font-weight: bold; font-family: inherit; font-size: 1rem;">
-                        Read Full Story &rarr;
-                    </button>
+                    <div class="terminal-title">terminal - anujarke@system:~</div>
                 </div>
-
-                <div class="card writer-mode">
-                    <div style="margin-bottom: 10px;">
-                        <span class="tag">Tech Blog</span>
-                        <span class="tag">Analysis</span>
+                <div class="terminal-body-wrapper">
+                    <div id="terminal-body">
+                        <div class="terminal-line">Welcome to System Core Terminal. Build Version 3.1.2.</div>
+                        <div class="terminal-line">Type <span class="term-cmd">help</span> to view available system commands.</div>
+                        <div class="terminal-line"></div>
                     </div>
-                    <h3>The Future of AI in Web Dev</h3>
-                    <p class="content-snippet">
-                        "Artificial Intelligence isn't replacing developers; it's evolving the syntax. 
-                        How LLMs are changing the way we structure backend logic..."
-                    </p>
-                    <a href="#" style="display: inline-block; margin-top: 15px; color: var(--accent); text-decoration: none; font-weight: bold;">
-                        Read Article &rarr;
-                    </a>
+                    <div class="terminal-input-row">
+                        <span class="terminal-input-prefix">anujarke@system:~$</span>
+                        <input type="text" id="terminal-input" placeholder="Type a command..." autofocus autocomplete="off" spellcheck="false">
+                    </div>
                 </div>
-
             </div>
         </section>
 
-        <section id="videos">
-            <h2>Video Editing</h2>
-            <p style="margin-bottom: 30px; color: #888;">
-                Short-form storytelling & motion graphics.
-            </p>
+        <!-- CONNECT SECTION - TELEMETRY CONSOLE -->
+        <section id="connect" class="reveal">
+            <h2>System Connection Panel</h2>
+            <p class="section-desc">Test packet delivery or connect directly via verified social channels.</p>
             
-            <a href="https://instagram.com/somewhereanuj" target="_blank" class="card social-profile">
+            <div class="contact-grid">
                 
-                <div class="profile-content">
-                    <div class="social-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
+                <!-- Telemetry Panel -->
+                <div class="telemetry-panel">
+                    <h3>Connection Telemetry</h3>
+                    
+                    <div class="telemetry-status-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">Host Status</span>
+                            <span class="stat-value" style="color: var(--accent);">SYS_ACTIVE</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Endpoint Port</span>
+                            <span class="stat-value">8080 // SECURE</span>
+                        </div>
                     </div>
-
+                    
+                    <div id="ping-log">Ready to test connection speed. Click "Test Connection Ping" below.</div>
+                    <button id="ping-btn" class="btn btn-primary" style="width: 100%;">TEST CONNECTION PING</button>
+                </div>
+                
+                <!-- Endpoints Panel -->
+                <div class="telemetry-panel" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3>View Full Portfolio</h3>
-                        <p style="margin: 5px 0 0; color: #a1a1aa; font-size: 0.9rem;">
-                            Watch my latest Reels, edits, and motion work on Instagram.
+                        <h3>Direct Connection Gateways</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+                            If you need an engineer who can manage database setups, build modular frontends, and write professional technical copy, initialize communication below.
                         </p>
+                        <a href="mailto:anujarke1010@gmail.com?subject=Opportunity%20Inquiry%20-%20Anuj%20Arke" class="btn btn-secondary" style="width: 100%; text-align: center; margin-bottom: 30px;">
+                            Say Hello via Email
+                        </a>
+                    </div>
+                    
+                    <div class="social-grid">
+                        <a href="https://linkedin.com/in/anuj-arke" target="_blank" class="social-item">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+
+                        <a href="https://github.com/Anuj747" target="_blank" class="social-item">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+
+                        <a href="https://instagram.com/waitforitanuj" target="_blank" class="social-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
                     </div>
                 </div>
 
-                <div class="arrow-icon">&rarr;</div>
-            </a>
-
-            <div style="margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap;">
-                <span class="tag">Premiere Pro</span>
-                <span class="tag">CapCut</span>
-                <span class="tag">Trend Analysis</span>
-                <span class="tag">Retention Editing</span>
             </div>
         </section>
 
-        <section id="connect" style="text-align: center;">
-            <h2>Let's Connect</h2>
-            <p style="color: #888; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                I am currently open to <strong>internships, freelance projects, and full-time opportunities.</strong> 
-                If you are looking for a developer who can also craft compelling content, let's talk.
-            </p>
-            
-            <a href="mailto:anujarke1010@gmail.com?subject=Opportunity%20Inquiry%20-%20Anuj%20Arke" class="btn email-btn">
-                Say Hello via Email
-            </a>
-
-            <div class="social-grid">
-                
-                <a href="https://linkedin.com/in/anuj-arke" target="_blank" class="social-icon-box linkedin">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                    <span>LinkedIn</span>
-                </a>
-
-                <a href="https://github.com/anuj747" target="_blank" class="social-icon-box github">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    <span>GitHub</span>
-                </a>
-
-                <a href="https://instagram.com/waitforitanuj" target="_blank" class="social-icon-box instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                    <span>Instagram</span>
-                </a>
-
+        <!-- DYNAMIC LIVE ACTIVITY LOG FEED -->
+        <section id="activity-log-section" class="reveal" style="border-bottom: none; padding-top: 40px; padding-bottom: 20px;">
+            <div class="activity-log-panel">
+                <h3>System Core Activity Telemetry Feed</h3>
+                <div id="activity-log-feed">
+                    <div class="activity-log-line"><span class="log-time">[00:00:00]</span> <span class="log-tag">SYS_DAEMON:</span> Starting activity listener...</div>
+                </div>
             </div>
         </section>
 
-        <footer style="padding: 40px 0; text-align: center; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1);">
-            &copy; 2026 Anuj Arke. Built with Code & Creativity.
+        <!-- FOOTER -->
+        <footer>
+            &copy; <span id="copyright-year">2026</span> Anuj Arke. Creative Shell online.
         </footer>
 
-        <a href="#home" id="scrollTop" style="position: fixed; bottom: 90px; right: 20px; background: var(--accent); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 999;">
-            ↑
-        </a>
+        <!-- Scroll Top -->
+        <a href="#home" id="scrollTop">↑</a>
 
     </div>
 
-    <div id="modal-story" class="modal-overlay" onclick="closeModal('modal-story')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="close-btn" onclick="closeModal('modal-story')">&times;</span>
-            <h2>The Space Between Us</h2>
-            <p style="color: #888; margin-bottom: 20px;">By Anuj Arke</p>
-            
-            <div class="story-text">
-                <p>His name was José. Just a quiet guy in a loud world, the kind who noticed things most people overlooked — like the way shadows move in the afternoon, or how someone’s eyes can carry entire storms without making a sound.</p>
-
-                <p>He talked to her sometimes — her name was Maria.<br>
-                Not every day. Just enough to remember her voice.<br>
-                Not enough to feel like he belonged in her orbit.</p>
-
-                <p>There was something about Maria that undid him. Not in the dramatic, cinematic way. It was gentler. Slower. Like how her eyes held the kind of innocence people write poems about — not naive, just kind. Like she still believed in things. Like she could still find beauty in the ordinary.</p>
-
-                <p>José would catch himself staring sometimes, not at her body like other guys did, but at her presence — the way she tucked her hair behind her ear when she was nervous, the way her smile didn’t ask for attention but demanded your honesty.</p>
-
-                <p>He told himself he wasn’t in love. That would be foolish, right? You don’t fall in love with someone you barely talk to. You don’t fall in love with someone who doesn’t even know you’re awake at night thinking about them.</p>
-
-                <p>But here he was. Awake. Thinking.</p>
-
-                <p>They’d spoken earlier that day, a passing moment in the hallway.<br>
-                “Hey,” she said, brushing past him with her notebook clutched to her chest.<br>
-                He said “Hey” back, and that was it. But it stayed with him — that one word, like a gift he hadn’t deserved but clung to anyway.</p>
-
-                <p>He wanted more. Not just a conversation. A connection. To tell her, maybe not everything, but something true.</p>
-
-                <p>Like: “I don’t know when it started, but I see you.”<br>
-                Or: “Your eyes remind me of peace I haven’t felt in years.”<br>
-                Or maybe just: “I’d like to know you… if that’s okay.”</p>
-
-                <p>But he didn’t say any of that. Not yet.</p>
-
-                <p>For now, José stayed in that strange in-between — not quite her friend, not quite a stranger, just a boy with feelings too loud for his chest and a voice too quiet to speak them.</p>
-
-                <p>But tomorrow might be different.<br>
-                And if not tomorrow, maybe the day after.</p>
+    <!-- Pico the Cat Mascot -->
+    <div id="pico-mascot-container">
+        <div class="pico-dialog" id="pico-dialog">
+            <div class="pico-dialog-text" id="pico-dialog-text">Need a dev? Meow!</div>
+            <div class="pico-dialog-arrow"></div>
+        </div>
+        <div class="pico-cat" id="pico-cat">
+            <div class="cat-ears">
+                <div class="cat-ear left"></div>
+                <div class="cat-ear right"></div>
             </div>
+            <div class="cat-head">
+                <div class="cat-eyes">
+                    <div class="cat-eye left">
+                        <div class="cat-pupil" id="pupil-left"></div>
+                    </div>
+                    <div class="cat-eye right">
+                        <div class="cat-pupil" id="pupil-right"></div>
+                    </div>
+                </div>
+                <div class="cat-nose"></div>
+                <div class="cat-mouth">
+                    <div class="cat-mouth-sub left"></div>
+                    <div class="cat-mouth-sub right"></div>
+                </div>
+                <div class="cat-whiskers">
+                    <div class="cat-whisker left top"></div>
+                    <div class="cat-whisker left mid"></div>
+                    <div class="cat-whisker left bot"></div>
+                    <div class="cat-whisker right top"></div>
+                    <div class="cat-whisker right mid"></div>
+                    <div class="cat-whisker right bot"></div>
+                </div>
+            </div>
+            <div class="cat-body">
+                <div class="cat-paw left"></div>
+                <div class="cat-paw right"></div>
+            </div>
+            <div class="cat-tail" id="pico-tail"></div>
         </div>
     </div>
 
+    <!-- Dynamic Copyright Year Script -->
     <script>
-        // ---------------------------------------------------------
-        // 1. MODAL LOGIC
-        // ---------------------------------------------------------
-        function openModal(id) {
-            document.getElementById(id).style.display = "flex";
-            document.body.style.overflow = "hidden";
-        }
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-
-        // ---------------------------------------------------------
-        // 2. SCROLL REVEAL ANIMATION
-        // ---------------------------------------------------------
-        const reveals = document.querySelectorAll('section, .showcase-card, .card, .toolkit-bar, .cert-card');
-        const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-
-        const revealOnScroll = new IntersectionObserver(function(entries, revealOnScroll) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    revealOnScroll.unobserve(entry.target);
-                }
-            });
-        }, revealOptions);
-
-        reveals.forEach(reveal => {
-            reveal.classList.add('reveal');
-            revealOnScroll.observe(reveal);
-        });
-
-        // ---------------------------------------------------------
-        // 3. SCROLL TO TOP BUTTON
-        // ---------------------------------------------------------
-        window.addEventListener('scroll', function() {
-            var scrollBtn = document.getElementById('scrollTop');
-            if (window.scrollY > 500) {
-                scrollBtn.style.opacity = '1';
-                scrollBtn.style.pointerEvents = 'auto';
-            } else {
-                scrollBtn.style.opacity = '0';
-                scrollBtn.style.pointerEvents = 'none';
-            }
-        });
-
-        // ---------------------------------------------------------
-        // 4. TYPEWRITER EFFECT (The "High Level" Text)
-        // ---------------------------------------------------------
-        const typewriters = document.querySelectorAll('.typewriter');
-        
-        typewriters.forEach((el, index) => {
-            const text = el.getAttribute('data-text');
-            el.innerText = ''; // Clear it first
-            
-            // Delay start based on line number so they type one by one
-            setTimeout(() => {
-                let i = 0;
-                let typing = setInterval(() => {
-                    if (i < text.length) {
-                        el.innerText += text.charAt(i);
-                        i++;
-                    } else {
-                        clearInterval(typing);
-                        // Remove blinking cursor effect after done
-                        el.style.borderRight = "none"; 
-                    }
-                }, 100); // Speed of typing (ms)
-            }, index * 1500); // Wait 1.5s between lines
-        });
-
-        // ---------------------------------------------------------
-        // 5. SPOTLIGHT EFFECT (Mouse Tracking Glow)
-        // ---------------------------------------------------------
-        const cards = document.querySelectorAll('.showcase-card, .cert-card, .card');
-
-        cards.forEach(card => {
-            card.onmousemove = function(e) {
-                const x = e.pageX - card.offsetLeft;
-                const y = e.pageY - card.offsetTop;
-
-                // Set the CSS variables to where the mouse is
-                card.style.setProperty('--mouse-x', x + 'px');
-                card.style.setProperty('--mouse-y', y + 'px');
-            }
-        });
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>

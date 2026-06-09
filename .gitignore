@@ -1,0 +1,10 @@
+# Local backups
+backup/
+backup_aurora_dark/
+backup_emerald/
+reactbits-temp/
+
+# IDE configurations
+.vscode/
+.DS_Store
+Thumbs.db
