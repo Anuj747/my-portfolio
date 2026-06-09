@@ -25,6 +25,16 @@
     <!-- Custom Style and Script -->
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+
+    <!-- Force scroll to top on every page load -->
+    <script>
+        // Disable browser's automatic scroll restoration (which causes the page to open mid-scroll)
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        // Always scroll to top immediately, before anything else renders
+        window.scrollTo(0, 0);
+    </script>
 </head>
 <body class="loading">
 
