@@ -113,8 +113,9 @@ function initPreloader() {
                 document.body.classList.remove('loading');
                 document.querySelector('.hero').classList.add('active');
                 
-                // Force scroll to top immediately on loader exit
+                // Start Lenis smooth scroll and force top position immediately on exit
                 if (window.lenis) {
+                    window.lenis.start();
                     window.lenis.scrollTo(0, { immediate: true });
                 } else {
                     window.scrollTo(0, 0);
@@ -1494,11 +1495,13 @@ function initSmoothScroll() {
     window.scrollTo(0, 0);
 
     const lenis = new Lenis({
-        duration: 1.1,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        lerp: 0.1, // Switch to lerp for direct and highly responsive mouse wheel feedback (no delayed sluggishness)
         smoothWheel: true,
         touchMultiplier: 1.5
     });
+
+    // Initially stop scroll tracking during preloader sequence
+    lenis.stop();
 
     // Reset Lenis scroll state to top immediately
     lenis.scrollTo(0, { immediate: true });
