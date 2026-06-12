@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTerminal();
     initPingWidget();
     initActivityLog();
-    initPicoMascot();
+    initNobuMascot();
     initScrollAnimations();
     initClock();
 
@@ -57,7 +57,7 @@ function initPreloader() {
         "BARKING AT COMPILER WARNINGS... [SHUTTING THEM UP]",
         "COMPILING CHEW TOYS & SEGFAULT SCRAPERS... [OK]",
         "CONVERTING COFFEE INTO SQL INJECTION QUERIES... [OK]",
-        "INDEXING PICOS CAT DAEMON... [MONITORING CLAW ACTION]",
+        "INDEXING NOBUS CAT DAEMON... [MONITORING CLAW ACTION]",
         "TREAT STATUS: SECURED. ACCESS GRANTED // DEV_ONLINE."
     ];
 
@@ -646,17 +646,17 @@ function initScrollAnimations() {
 }
 
 // ---------------------------------------------------------
-// 7. PICO THE CAT MASCOT INTERACTION
+// 7. NOBU THE CAT MASCOT INTERACTION
 // ---------------------------------------------------------
-function initPicoMascot() {
-    const picoMascot = document.getElementById('pico-mascot-container');
-    const picoCat = document.getElementById('pico-cat');
-    const picoDialog = document.getElementById('pico-dialog');
-    const picoDialogText = document.getElementById('pico-dialog-text');
+function initNobuMascot() {
+    const nobuMascot = document.getElementById('nobu-mascot-container');
+    const nobuCat = document.getElementById('nobu-cat');
+    const nobuDialog = document.getElementById('nobu-dialog');
+    const nobuDialogText = document.getElementById('nobu-dialog-text');
     const pupilLeft = document.getElementById('pupil-left');
     const pupilRight = document.getElementById('pupil-right');
 
-    if (!picoMascot || !picoCat || !picoDialog || !picoDialogText) return;
+    if (!nobuMascot || !nobuCat || !nobuDialog || !nobuDialogText) return;
 
     // Pupil movement range
     const maxOffset = 3; // pixels
@@ -685,7 +685,7 @@ function initPicoMascot() {
     }
 
     // Dialogue prompts
-    const picoQuotes = [
+    const nobuQuotes = [
         "Need a dev? Meow!",
         "Anuj's CGPA is 8.0! Super clean transcript.",
         "Obsidian Emerald looks so cyber, doesn't it?",
@@ -701,33 +701,33 @@ function initPicoMascot() {
     let speechTimeout;
 
     // Click Mascot to wink and trigger dialogue
-    picoMascot.addEventListener('click', () => {
+    nobuMascot.addEventListener('click', () => {
         // Wink animation
-        picoCat.classList.add('wink');
+        nobuCat.classList.add('wink');
         setTimeout(() => {
-            picoCat.classList.remove('wink');
+            nobuCat.classList.remove('wink');
         }, 300);
 
         // Pick random quote
-        const randomQuote = picoQuotes[Math.floor(Math.random() * picoQuotes.length)];
-        picoDialogText.textContent = randomQuote;
+        const randomQuote = nobuQuotes[Math.floor(Math.random() * nobuQuotes.length)];
+        nobuDialogText.textContent = randomQuote;
         
         // Show dialogue
-        picoDialog.classList.add('active');
+        nobuDialog.classList.add('active');
 
         // Reset display timeout
         clearTimeout(speechTimeout);
         speechTimeout = setTimeout(() => {
-            picoDialog.classList.remove('active');
+            nobuDialog.classList.remove('active');
         }, 4000);
     });
 
     // Auto welcome message on page load after preloader fades
     setTimeout(() => {
-        picoDialogText.textContent = "Welcome! I'm Pico. Meow!";
-        picoDialog.classList.add('active');
+        nobuDialogText.textContent = "Welcome! I'm Nobu. Meow!";
+        nobuDialog.classList.add('active');
         speechTimeout = setTimeout(() => {
-            picoDialog.classList.remove('active');
+            nobuDialog.classList.remove('active');
         }, 3500);
     }, 2500);
 }

@@ -1034,7 +1034,7 @@ footer {
     
     #scrollTop {
         bottom: 90px;
-        right: 90px; /* Offset left on mobile to avoid overlapping with Pico the Cat */
+        right: 90px; /* Offset left on mobile to avoid overlapping with Nobu the Cat */
     }
     
     .hero h1 {
@@ -1046,8 +1046,8 @@ footer {
     }
 }
 
-/* --- PICO THE CAT MASCOT --- */
-#pico-mascot-container {
+/* --- NOBU THE CAT MASCOT --- */
+#nobu-mascot-container {
     position: fixed;
     bottom: 20px;
     right: 80px; /* Offset to not block scroll top button */
@@ -1059,8 +1059,8 @@ footer {
     user-select: none;
 }
 
-/* Pico Dialogue Bubble */
-.pico-dialog {
+/* Nobu Dialogue Bubble */
+.nobu-dialog {
     position: absolute;
     bottom: 85px;
     background: #09090b;
@@ -1076,13 +1076,13 @@ footer {
     z-index: 1000;
 }
 
-.pico-dialog.active {
+.nobu-dialog.active {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
 }
 
-.pico-dialog-text {
+.nobu-dialog-text {
     font-family: 'Fira Code', monospace;
     font-size: 0.72rem;
     color: var(--text-primary);
@@ -1090,7 +1090,7 @@ footer {
     text-align: center;
 }
 
-.pico-dialog-arrow {
+.nobu-dialog-arrow {
     position: absolute;
     bottom: -6px;
     left: 50%;
@@ -1102,20 +1102,20 @@ footer {
     border-bottom: 1.5px solid var(--accent);
 }
 
-/* Pico Cat Body Shapes */
-.pico-cat {
+/* Nobu Cat Body Shapes */
+.nobu-cat {
     position: relative;
     width: 65px;
     height: 70px;
     transition: transform 0.2s;
 }
 
-.pico-cat:hover {
+.nobu-cat:hover {
     transform: scale(1.05);
 }
 
 /* Winking/Blinking animation helper */
-.pico-cat.wink .cat-eye.right {
+.nobu-cat.wink .cat-eye.right {
     height: 2px;
     margin-top: 6px;
     border-radius: 0;
@@ -1338,11 +1338,11 @@ footer {
 }
 
 @media (max-width: 600px) {
-    #pico-mascot-container {
+    #nobu-mascot-container {
         bottom: 85px; /* Stay above mobile bottom dock */
         right: 15px;
     }
-    .pico-dialog {
+    .nobu-dialog {
         width: 130px;
         bottom: 80px;
     }
