@@ -113,6 +113,13 @@ function initPreloader() {
                 document.body.classList.remove('loading');
                 document.querySelector('.hero').classList.add('active');
                 
+                // Force scroll to top immediately on loader exit
+                if (window.lenis) {
+                    window.lenis.scrollTo(0, { immediate: true });
+                } else {
+                    window.scrollTo(0, 0);
+                }
+
                 // Recalculate GSAP trigger positions once page scroll is enabled
                 if (typeof ScrollTrigger !== 'undefined') {
                     ScrollTrigger.refresh();
