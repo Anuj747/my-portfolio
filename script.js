@@ -345,7 +345,7 @@ const TERMINAL_DATA = {
 --------------------------------------------------------<br>
 Current Role: Full-Stack Developer & Database Specialist<br>
 Status      : Actively seeking Full-Time Opportunities, Internships, and Freelance Work.<br>
-Experience  : Junior SQL Developer Intern at R&D Info Technology (1 Month)<br>
+Experience  : SQL Intern at RD Info Technology (May 2026 – June 2026)<br>
 Bio         : I construct scalable interfaces, build robust databases, and write <br>
               clear technical documentation. I adapt quickly to solve complex <br>
               end-to-end engineering challenges.`,
