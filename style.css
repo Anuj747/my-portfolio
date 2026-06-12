@@ -493,7 +493,7 @@ section h2 {
 /* --- PROJECTS CARD GRID (No Images, Frosted Glass) --- */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     gap: 28px;
 }
 
@@ -1006,6 +1006,9 @@ footer {
         border-radius: 8px;
         border: 1px solid var(--border-dim);
         box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        background: rgba(10, 10, 14, 0.95); /* Solid dark background to prevent scrolled text overlap */
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
     }
     
     .nav-container {
@@ -1034,6 +1037,7 @@ footer {
     
     #scrollTop {
         bottom: 90px;
+        right: 90px; /* Offset left on mobile to avoid overlapping with Pico the Cat */
     }
     
     .hero h1 {

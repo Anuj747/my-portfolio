@@ -1385,7 +1385,11 @@ function initTextPressure() {
             requestAnimationFrame(() => {
                 const textRect = h1.getBoundingClientRect();
                 if (scale && textRect.height > 0 && containerRect.height > 0) {
-                    const yRatio = containerRect.height / textRect.height;
+                    let yRatio = containerRect.height / textRect.height;
+                    // Limit vertical stretching on mobile/touch screens to avoid severe distortion
+                    if (window.innerWidth < 768) {
+                        yRatio = Math.min(yRatio, 1.25);
+                    }
                     scaleY = yRatio;
                     lineHeight = yRatio;
                     h1.style.lineHeight = `${lineHeight}`;
@@ -1417,8 +1421,12 @@ function initTextPressure() {
 
                 const d = dist(mouse, charCenter);
 
-                const wdth = width ? Math.floor(getAttr(d, maxDist, 5, 200)) : 100;
-                const wght = weight ? Math.floor(getAttr(d, maxDist, 100, 900)) : 400;
+                const isMobile = window.innerWidth < 768;
+                const minWdthVal = isMobile ? 65 : 5;
+                const minWghtVal = isMobile ? 300 : 100;
+
+                const wdth = width ? Math.floor(getAttr(d, maxDist, minWdthVal, 200)) : 100;
+                const wght = weight ? Math.floor(getAttr(d, maxDist, minWghtVal, 900)) : 400;
                 const italVal = italic ? getAttr(d, maxDist, 0, 1).toFixed(2) : 0;
                 const alphaVal = alpha ? getAttr(d, maxDist, 0, 1).toFixed(2) : 1;
 
