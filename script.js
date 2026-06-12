@@ -1490,12 +1490,18 @@ function initSmoothScroll() {
         return;
     }
 
+    // Force scroll to top immediately before initializing Lenis
+    window.scrollTo(0, 0);
+
     const lenis = new Lenis({
         duration: 1.1,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
         touchMultiplier: 1.5
     });
+
+    // Reset Lenis scroll state to top immediately
+    lenis.scrollTo(0, { immediate: true });
 
     lenis.on('scroll', () => {
         if (typeof ScrollTrigger !== 'undefined') {
