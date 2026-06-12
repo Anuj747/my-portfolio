@@ -490,6 +490,141 @@ section h2 {
     box-shadow: 0 0 15px rgba(255, 0, 127, 0.08);
 }
 
+/* --- WORK EXPERIENCE TIMELINE --- */
+.experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.exp-card {
+    display: flex;
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.exp-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-glow);
+    box-shadow: 0 16px 40px rgba(0, 255, 157, 0.08);
+}
+
+.exp-card-accent {
+    width: 5px;
+    min-height: 100%;
+    background: var(--accent-gradient);
+    flex-shrink: 0;
+}
+
+.exp-card-content {
+    padding: 30px 35px;
+    flex: 1;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    gap: 16px;
+}
+
+.exp-role-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.exp-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.exp-company {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.88rem;
+    color: var(--accent);
+    letter-spacing: 0.3px;
+}
+
+.exp-date {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-dim);
+    border-radius: 6px;
+}
+
+.exp-highlights {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 18px;
+}
+
+.exp-highlights li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.exp-highlights li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.exp-tag {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(0, 255, 157, 0.06);
+    border: 1px solid rgba(0, 255, 157, 0.15);
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+}
+
+.exp-tag:hover {
+    background: rgba(0, 255, 157, 0.12);
+    border-color: rgba(0, 255, 157, 0.35);
+    box-shadow: 0 0 12px rgba(0, 255, 157, 0.1);
+}
+
+@media (max-width: 600px) {
+    .exp-header {
+        flex-direction: column;
+    }
+    .exp-date {
+        align-self: flex-start;
+    }
+    .exp-card-content {
+        padding: 22px 20px;
+    }
+}
+
 /* --- PROJECTS CARD GRID (No Images, Frosted Glass) --- */
 .project-grid {
     display: grid;
