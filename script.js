@@ -1,6 +1,7 @@
 // script.js - Portfolio Interactive System (Full Creative Aurora Version)
 
 document.addEventListener('DOMContentLoaded', () => {
+    initSmoothScroll();
     initPreloader();
     initThreeJS();
     initTerminal();
@@ -130,7 +131,7 @@ function initPreloader() {
 let scene, camera, renderer, particleSystem, linesMesh;
 const maxDistance = 0.95;
 let mouse = { x: 0, y: 0 };
-let particleCount = 240;
+let particleCount = window.innerWidth < 768 ? 60 : 150;
 
 function initThreeJS() {
     const container = document.getElementById('canvas-container');
@@ -617,10 +618,14 @@ function initScrollAnimations() {
                 const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
                 const offsetPosition = elementPosition - navOffset;
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                if (window.lenis) {
+                    window.lenis.scrollTo(targetElement, { offset: -navOffset });
+                } else {
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
 
                 // Update hash in URL without jumping (safely handles local file:// security restrictions)
                 try {
@@ -1114,7 +1119,7 @@ function initElectricBorders() {
             return getCornerPoint(left + rad, top + rad, rad, Math.PI, Math.PI / 2, (distance - accumulated) / cornerArc);
         };
 
-        const octaves = 10;
+        const octaves = 3; // Reduced from 10 to 3 for massive CPU optimization
         const lacunarity = 1.6;
         const gain = 0.7;
         const amplitude = chaos;
@@ -1173,7 +1178,7 @@ function initElectricBorders() {
             const radius = Math.min(borderRadius, maxRadius);
 
             const approximatePerimeter = 2 * (borderWidth + borderHeight) + 2 * Math.PI * radius;
-            const sampleCount = Math.floor(approximatePerimeter / 2);
+            const sampleCount = Math.floor(approximatePerimeter / 8); // Sample every 8px instead of 2px for 4x CPU reduction
 
             ctx.beginPath();
 
@@ -1215,7 +1220,9 @@ function initElectricBorders() {
             ctx.closePath();
             ctx.stroke();
 
-            animationFrameId = requestAnimationFrame(drawElectricBorder);
+            if (isIntersecting) {
+                animationFrameId = requestAnimationFrame(drawElectricBorder);
+            }
         };
 
         const resizeObserver = new ResizeObserver(() => {
@@ -1225,11 +1232,25 @@ function initElectricBorders() {
         });
         resizeObserver.observe(container);
 
-        animationFrameId = requestAnimationFrame(drawElectricBorder);
+        let isIntersecting = false;
+        const intersectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                isIntersecting = entry.isIntersecting;
+                if (isIntersecting && !animationFrameId) {
+                    lastFrameTime = 0;
+                    animationFrameId = requestAnimationFrame(drawElectricBorder);
+                } else if (!isIntersecting && animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = null;
+                }
+            });
+        }, { threshold: 0.01 });
+        intersectionObserver.observe(container);
 
         container._cleanupElectricBorder = () => {
             if (animationFrameId) cancelAnimationFrame(animationFrameId);
             resizeObserver.disconnect();
+            intersectionObserver.disconnect();
         };
     });
 }
@@ -1451,4 +1472,43 @@ function initTextPressure() {
             if (rafId) cancelAnimationFrame(rafId);
         };
     });
+}
+
+// ---------------------------------------------------------
+// 12. LENIS SMOOTH SCROLL INITIALIZATION
+// ---------------------------------------------------------
+function initSmoothScroll() {
+    if (typeof Lenis === 'undefined') {
+        console.warn("Lenis library is not loaded. Skipping smooth scroll.");
+        return;
+    }
+
+    const lenis = new Lenis({
+        duration: 1.1,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        touchMultiplier: 1.5
+    });
+
+    lenis.on('scroll', () => {
+        if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.update();
+        }
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    window.lenis = lenis;
+
+    // Connect GSAP ScrollTrigger to Lenis
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+    }
 }

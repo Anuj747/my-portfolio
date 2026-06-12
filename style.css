@@ -979,10 +979,7 @@ footer {
         gap: 20px;
     }
     
-    #canvas-container {
-        height: 350px;
-        order: -1;
-    }
+    
     
     .contact-grid {
         grid-template-columns: 1fr;
