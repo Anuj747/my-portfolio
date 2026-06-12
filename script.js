@@ -1512,19 +1512,19 @@ function initSmoothScroll() {
         }
     });
 
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
     window.lenis = lenis;
 
-    // Connect GSAP ScrollTrigger to Lenis
+    // Use GSAP ticker if available, otherwise fallback to standard requestAnimationFrame loop (prevents duplicate RAF updates)
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.ticker.add((time) => {
             lenis.raf(time * 1000);
         });
         gsap.ticker.lagSmoothing(0);
+    } else {
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
     }
 }
